@@ -1,0 +1,50 @@
+#Global switches for programmable-fuze features.
+[features]
+	#Allow proximity detonation. Existing programmed fuzes are ignored while disabled.
+	enableProximity = true
+	#Allow timer detonation. Existing programmed fuzes are ignored while disabled.
+	enableTimer = true
+	#Allow programmable fuzes to prevent projectile lifetime despawn.
+	enableProjectilePersistence = true
+	#Allow CC:Tweaked computers to change programmable-fuze settings.
+	#hasProgrammableFuze() remains available as a read-only check.
+	enableComputerProgramming = true
+
+#Settings used by a new or not-yet-programmed fuze.
+[defaults]
+	#Enable proximity detonation by default.
+	proximityActive = true
+	#Default proximity radius in blocks/metres.
+	#The effective value is clamped to the configured limits below.
+	# Default: 2.0
+	# Range: 0.0 ~ 1024.0
+	proximityRadius = 2.0
+	#Enable timer detonation by default.
+	timerActive = false
+	#Default timer delay in seconds.
+	#The effective value is clamped to the configured limits below.
+	# Default: 15.0
+	# Range: 0.0 ~ 3.1536E7
+	timerSeconds = 15.0
+	#Prevent lifetime/despawn removal by default.
+	persistentProjectile = false
+
+#Values accepted by the CC:Tweaked API.
+#If a minimum is larger than its maximum, the two values are automatically reordered.
+[limits]
+	#Smallest accepted proximity radius in blocks/metres. Zero means contact distance.
+	# Default: 0.0
+	# Range: 0.0 ~ 1024.0
+	minimumProximityRadius = 0.0
+	#Largest accepted proximity radius in blocks/metres.
+	# Default: 64.0
+	# Range: 0.0 ~ 1024.0
+	maximumProximityRadius = 64.0
+	#Smallest accepted timer delay in seconds. Timer resolution is 0.05 seconds.
+	# Default: 0.0
+	# Range: 0.0 ~ 3.1536E7
+	minimumTimerSeconds = 0.0
+	#Largest accepted timer delay in seconds.
+	# Default: 86400.0
+	# Range: 0.0 ~ 3.1536E7
+	maximumTimerSeconds = 86400.0

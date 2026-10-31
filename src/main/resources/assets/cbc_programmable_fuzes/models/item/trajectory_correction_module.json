@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cbc_programmable_fuzes:item/trajectory_correction_module"
+  }
+}

@@ -1,0 +1,84 @@
+#Global switches for programmable-fuze features.
+[features]
+	#Allow proximity detonation. Existing programmed fuzes are ignored while disabled.
+	enableProximity = true
+	#Allow timer detonation. Existing programmed fuzes are ignored while disabled.
+	enableTimer = true
+	#Allow programmable fuzes and correction modules to prevent projectile lifetime despawn.
+	enableProjectilePersistence = true
+	#Allow CC:Tweaked computers to change programmable-fuze settings.
+	#hasProgrammableFuze() remains available as a read-only check.
+	enableComputerProgramming = true
+	#Enable active trajectory-correction tail modules.
+	enableTrajectoryCorrection = true
+
+#Settings used by a new or not-yet-programmed fuze.
+[defaults]
+	#Enable proximity detonation by default.
+	proximityActive = true
+	#Default proximity radius in blocks/metres.
+	#The effective value is clamped to the configured limits below.
+	# Default: 2.0
+	# Range: 0.0 ~ 1024.0
+	proximityRadius = 2.0
+	#Enable timer detonation by default.
+	timerActive = false
+	#Default timer delay in seconds.
+	#The effective value is clamped to the configured limits below.
+	# Default: 15.0
+	# Range: 0.0 ~ 3.1536E7
+	timerSeconds = 15.0
+	#Prevent lifetime/despawn removal by default.
+	persistentProjectile = false
+
+#Values accepted by the CC:Tweaked API.
+#If a minimum is larger than its maximum, the two values are automatically reordered.
+[limits]
+	#Smallest accepted proximity radius in blocks/metres. Zero means contact distance.
+	# Default: 0.0
+	# Range: 0.0 ~ 1024.0
+	minimumProximityRadius = 0.0
+	#Largest accepted proximity radius in blocks/metres.
+	# Default: 64.0
+	# Range: 0.0 ~ 1024.0
+	maximumProximityRadius = 64.0
+	#Smallest accepted timer delay in seconds. Timer resolution is 0.05 seconds.
+	# Default: 0.0
+	# Range: 0.0 ~ 3.1536E7
+	minimumTimerSeconds = 0.0
+	#Largest accepted timer delay in seconds.
+	# Default: 86400.0
+	# Range: 0.0 ~ 3.1536E7
+	maximumTimerSeconds = 86400.0
+
+#Active tail-module flight model.
+[trajectoryCorrection]
+	#Theoretical range multiplier supplied by the lifting fins.
+	#1.10 means approximately ten percent more range without changing CBC damage values.
+	# Default: 1.1
+	# Range: 1.0 ~ 2.0
+	rangeMultiplier = 1.1
+	#Maximum 3D direction change accumulated per kilometre flown after the apex.
+	#The default allows six degrees of correction in any direction per kilometre.
+	# Default: 6.0
+	# Range: 0.0 ~ 45.0
+	turnDegreesPerKilometre = 6.0
+
+#Bounded work limits for large salvos.
+#Cheap Sable broad-phase checks still run on every physics substep.
+[performance]
+	#Maximum exact block rays used by one proximity check.
+	#The rays are distributed over the full spherical search area.
+	# Default: 65
+	# Range: 1 ~ 197
+	maximumProximityRaysPerCheck = 65
+	#Shared exact block-ray budget for all programmable fuzes in one server tick.
+	#Every check retains at least its central safety ray after this budget is exhausted.
+	# Default: 4096
+	# Range: 64 ~ 65536
+	maximumProximityRaysPerServerTick = 4096
+	#Maximum exact Sable-construction proximity checks in one server tick.
+	#The spatial-index broad phase remains active on every Sable physics substep.
+	# Default: 128
+	# Range: 1 ~ 4096
+	maximumPhysicalNarrowPhaseChecksPerServerTick = 128

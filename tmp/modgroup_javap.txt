@@ -1,0 +1,1072 @@
+Compiled from "ModGroup.java"
+public class rbasamoyai.createbigcannons.ModGroup {
+  public static final net.minecraft.resources.ResourceKey<net.minecraft.world.item.CreativeModeTab> MAIN_TAB_KEY;
+
+  private static final net.neoforged.neoforge.registries.DeferredRegister<net.minecraft.world.item.CreativeModeTab> TAB_REGISTER;
+
+  private static final java.util.Map<net.minecraft.resources.ResourceKey<net.minecraft.world.item.CreativeModeTab>, net.neoforged.neoforge.registries.DeferredHolder<net.minecraft.world.item.CreativeModeTab, net.minecraft.world.item.CreativeModeTab>> TABS;
+
+  public static final java.util.function.Supplier<net.minecraft.world.item.CreativeModeTab> GROUP;
+
+  public rbasamoyai.createbigcannons.ModGroup();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static java.util.function.Supplier<net.minecraft.world.item.CreativeModeTab> wrapGroup(java.lang.String, java.util.function.Supplier<net.minecraft.world.item.CreativeModeTab>);
+    Code:
+       0: getstatic     #7                  // Field TAB_REGISTER:Lnet/neoforged/neoforge/registries/DeferredRegister;
+       3: aload_0
+       4: aload_1
+       5: invokevirtual #13                 // Method net/neoforged/neoforge/registries/DeferredRegister.register:(Ljava/lang/String;Ljava/util/function/Supplier;)Lnet/neoforged/neoforge/registries/DeferredHolder;
+       8: astore_2
+       9: getstatic     #19                 // Field TABS:Ljava/util/Map;
+      12: aload_0
+      13: invokestatic  #23                 // Method makeKey:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceKey;
+      16: aload_2
+      17: invokeinterface #27,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      22: pop
+      23: aload_2
+      24: areturn
+
+  public static net.minecraft.world.item.CreativeModeTab$Builder createBuilder();
+    Code:
+       0: invokestatic  #33                 // Method net/minecraft/world/item/CreativeModeTab.builder:()Lnet/minecraft/world/item/CreativeModeTab$Builder;
+       3: iconst_1
+       4: anewarray     #39                 // class net/minecraft/resources/ResourceLocation
+       7: dup
+       8: iconst_0
+       9: ldc           #41                 // String palettes
+      11: invokestatic  #43                 // Method com/simibubi/create/Create.asResource:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+      14: aastore
+      15: invokevirtual #49                 // Method net/minecraft/world/item/CreativeModeTab$Builder.withTabsBefore:([Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/world/item/CreativeModeTab$Builder;
+      18: areturn
+
+  public static void registerNeoForge(net.neoforged.bus.api.IEventBus);
+    Code:
+       0: getstatic     #7                  // Field TAB_REGISTER:Lnet/neoforged/neoforge/registries/DeferredRegister;
+       3: aload_0
+       4: invokevirtual #55                 // Method net/neoforged/neoforge/registries/DeferredRegister.register:(Lnet/neoforged/bus/api/IEventBus;)V
+       7: return
+
+  public static void setDefaultTabToNull();
+    Code:
+       0: getstatic     #58                 // Field rbasamoyai/createbigcannons/CreateBigCannons.REGISTRATE:Lcom/simibubi/create/foundation/data/CreateRegistrate;
+       3: aconst_null
+       4: checkcast     #64                 // class net/minecraft/resources/ResourceKey
+       7: invokevirtual #66                 // Method com/simibubi/create/foundation/data/CreateRegistrate.defaultCreativeTab:(Lnet/minecraft/resources/ResourceKey;)Lcom/tterrag/registrate/AbstractRegistrate;
+      10: pop
+      11: return
+
+  public static net.minecraft.resources.ResourceKey<net.minecraft.world.item.CreativeModeTab> makeKey(java.lang.String);
+    Code:
+       0: getstatic     #72                 // Field net/minecraft/core/registries/Registries.CREATIVE_MODE_TAB:Lnet/minecraft/resources/ResourceKey;
+       3: aload_0
+       4: invokestatic  #78                 // Method rbasamoyai/createbigcannons/CreateBigCannons.resource:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+       7: invokestatic  #81                 // Method net/minecraft/resources/ResourceKey.create:(Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceKey;
+      10: areturn
+
+  public static void register();
+    Code:
+       0: getstatic     #58                 // Field rbasamoyai/createbigcannons/CreateBigCannons.REGISTRATE:Lcom/simibubi/create/foundation/data/CreateRegistrate;
+       3: ldc           #85                 // String itemGroup.createbigcannons
+       5: ldc           #87                 // String Create Big Cannons
+       7: invokevirtual #89                 // Method com/simibubi/create/foundation/data/CreateRegistrate.addRawLang:(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+      10: pop
+      11: return
+
+  private static net.minecraft.world.item.CreativeModeTab lambda$static$1();
+    Code:
+       0: invokestatic  #93                 // Method createBuilder:()Lnet/minecraft/world/item/CreativeModeTab$Builder;
+       3: ldc           #85                 // String itemGroup.createbigcannons
+       5: invokestatic  #96                 // InterfaceMethod net/minecraft/network/chat/Component.translatable:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+       8: invokevirtual #102                // Method net/minecraft/world/item/CreativeModeTab$Builder.title:(Lnet/minecraft/network/chat/Component;)Lnet/minecraft/world/item/CreativeModeTab$Builder;
+      11: getstatic     #106                // Field rbasamoyai/createbigcannons/index/CBCBlocks.SOLID_SHOT:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      14: dup
+      15: invokestatic  #112                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+      18: pop
+      19: invokedynamic #118,  0            // InvokeDynamic #0:get:(Lcom/tterrag/registrate/util/entry/BlockEntry;)Ljava/util/function/Supplier;
+      24: invokevirtual #122                // Method net/minecraft/world/item/CreativeModeTab$Builder.icon:(Ljava/util/function/Supplier;)Lnet/minecraft/world/item/CreativeModeTab$Builder;
+      27: invokedynamic #126,  0            // InvokeDynamic #1:accept:()Lnet/minecraft/world/item/CreativeModeTab$DisplayItemsGenerator;
+      32: invokevirtual #130                // Method net/minecraft/world/item/CreativeModeTab$Builder.displayItems:(Lnet/minecraft/world/item/CreativeModeTab$DisplayItemsGenerator;)Lnet/minecraft/world/item/CreativeModeTab$Builder;
+      35: invokevirtual #134                // Method net/minecraft/world/item/CreativeModeTab$Builder.build:()Lnet/minecraft/world/item/CreativeModeTab;
+      38: areturn
+
+  private static void lambda$static$0(net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters, net.minecraft.world.item.CreativeModeTab$Output);
+    Code:
+       0: aload_1
+       1: sipush        185
+       4: anewarray     #138                // class net/minecraft/world/item/ItemStack
+       7: dup
+       8: iconst_0
+       9: getstatic     #140                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CANNON_MOUNT:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      12: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+      15: aastore
+      16: dup
+      17: iconst_1
+      18: getstatic     #149                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CANNON_MOUNT_EXTENSION:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      21: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+      24: aastore
+      25: dup
+      26: iconst_2
+      27: getstatic     #152                // Field rbasamoyai/createbigcannons/index/CBCBlocks.FIXED_CANNON_MOUNT:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      30: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+      33: aastore
+      34: dup
+      35: iconst_3
+      36: getstatic     #155                // Field rbasamoyai/createbigcannons/index/CBCBlocks.LOG_CANNON_END:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      39: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+      42: aastore
+      43: dup
+      44: iconst_4
+      45: getstatic     #158                // Field rbasamoyai/createbigcannons/index/CBCBlocks.LOG_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      48: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+      51: aastore
+      52: dup
+      53: iconst_5
+      54: getstatic     #161                // Field rbasamoyai/createbigcannons/index/CBCBlocks.WROUGHT_IRON_CANNON_END:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      57: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+      60: aastore
+      61: dup
+      62: bipush        6
+      64: getstatic     #164                // Field rbasamoyai/createbigcannons/index/CBCBlocks.WROUGHT_IRON_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      67: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+      70: aastore
+      71: dup
+      72: bipush        7
+      74: getstatic     #167                // Field rbasamoyai/createbigcannons/index/CBCBlocks.WROUGHT_IRON_DROP_MORTAR_END:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      77: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+      80: aastore
+      81: dup
+      82: bipush        8
+      84: getstatic     #170                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CAST_IRON_CANNON_END:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      87: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+      90: aastore
+      91: dup
+      92: bipush        9
+      94: getstatic     #173                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CAST_IRON_SLIDING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+      97: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     100: aastore
+     101: dup
+     102: bipush        10
+     104: getstatic     #176                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CAST_IRON_QUICKFIRING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     107: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     110: aastore
+     111: dup
+     112: bipush        11
+     114: getstatic     #179                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CAST_IRON_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     117: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     120: aastore
+     121: dup
+     122: bipush        12
+     124: getstatic     #182                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CAST_IRON_CANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     127: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     130: aastore
+     131: dup
+     132: bipush        13
+     134: getstatic     #185                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BRONZE_CANNON_END:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     137: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     140: aastore
+     141: dup
+     142: bipush        14
+     144: getstatic     #188                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BRONZE_SLIDING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     147: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     150: aastore
+     151: dup
+     152: bipush        15
+     154: getstatic     #191                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BRONZE_QUICKFIRING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     157: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     160: aastore
+     161: dup
+     162: bipush        16
+     164: getstatic     #194                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BRONZE_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     167: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     170: aastore
+     171: dup
+     172: bipush        17
+     174: getstatic     #197                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BRONZE_CANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     177: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     180: aastore
+     181: dup
+     182: bipush        18
+     184: getstatic     #200                // Field rbasamoyai/createbigcannons/index/CBCBlocks.STEEL_SLIDING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     187: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     190: aastore
+     191: dup
+     192: bipush        19
+     194: getstatic     #203                // Field rbasamoyai/createbigcannons/index/CBCBlocks.STEEL_QUICKFIRING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     197: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     200: aastore
+     201: dup
+     202: bipush        20
+     204: getstatic     #206                // Field rbasamoyai/createbigcannons/index/CBCBlocks.STEEL_SCREW_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     207: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     210: aastore
+     211: dup
+     212: bipush        21
+     214: getstatic     #209                // Field rbasamoyai/createbigcannons/index/CBCBlocks.THICK_STEEL_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     217: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     220: aastore
+     221: dup
+     222: bipush        22
+     224: getstatic     #212                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BUILT_UP_STEEL_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     227: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     230: aastore
+     231: dup
+     232: bipush        23
+     234: getstatic     #215                // Field rbasamoyai/createbigcannons/index/CBCBlocks.STEEL_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     237: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     240: aastore
+     241: dup
+     242: bipush        24
+     244: getstatic     #218                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BUILT_UP_STEEL_CANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     247: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     250: aastore
+     251: dup
+     252: bipush        25
+     254: getstatic     #221                // Field rbasamoyai/createbigcannons/index/CBCBlocks.STEEL_CANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     257: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     260: aastore
+     261: dup
+     262: bipush        26
+     264: getstatic     #224                // Field rbasamoyai/createbigcannons/index/CBCBlocks.NETHERSTEEL_SCREW_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     267: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     270: aastore
+     271: dup
+     272: bipush        27
+     274: getstatic     #227                // Field rbasamoyai/createbigcannons/index/CBCBlocks.THICK_NETHERSTEEL_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     277: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     280: aastore
+     281: dup
+     282: bipush        28
+     284: getstatic     #230                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BUILT_UP_NETHERSTEEL_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     287: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     290: aastore
+     291: dup
+     292: bipush        29
+     294: getstatic     #233                // Field rbasamoyai/createbigcannons/index/CBCBlocks.NETHERSTEEL_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     297: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     300: aastore
+     301: dup
+     302: bipush        30
+     304: getstatic     #236                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BUILT_UP_NETHERSTEEL_CANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     307: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     310: aastore
+     311: dup
+     312: bipush        31
+     314: getstatic     #239                // Field rbasamoyai/createbigcannons/index/CBCBlocks.NETHERSTEEL_CANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     317: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     320: aastore
+     321: dup
+     322: bipush        32
+     324: getstatic     #242                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CANNON_LOADER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     327: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     330: aastore
+     331: dup
+     332: bipush        33
+     334: getstatic     #245                // Field rbasamoyai/createbigcannons/index/CBCBlocks.RAM_HEAD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     337: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     340: aastore
+     341: dup
+     342: bipush        34
+     344: getstatic     #248                // Field rbasamoyai/createbigcannons/index/CBCBlocks.WORM_HEAD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     347: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     350: aastore
+     351: dup
+     352: bipush        35
+     354: getstatic     #251                // Field rbasamoyai/createbigcannons/index/CBCBlocks.POWDER_CHARGE:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     357: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     360: aastore
+     361: dup
+     362: bipush        36
+     364: iconst_0
+     365: invokestatic  #254                // Method rbasamoyai/createbigcannons/munitions/big_cannon/propellant/BigCartridgeBlockItem.getWithPower:(I)Lnet/minecraft/world/item/ItemStack;
+     368: aastore
+     369: dup
+     370: bipush        37
+     372: iconst_4
+     373: invokestatic  #254                // Method rbasamoyai/createbigcannons/munitions/big_cannon/propellant/BigCartridgeBlockItem.getWithPower:(I)Lnet/minecraft/world/item/ItemStack;
+     376: aastore
+     377: dup
+     378: bipush        38
+     380: getstatic     #260                // Field rbasamoyai/createbigcannons/index/CBCItems.BIG_CARTRIDGE_SHEET:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     383: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     386: aastore
+     387: dup
+     388: bipush        39
+     390: getstatic     #269                // Field rbasamoyai/createbigcannons/index/CBCItems.CONGEALED_NITRO:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     393: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     396: aastore
+     397: dup
+     398: bipush        40
+     400: getstatic     #272                // Field rbasamoyai/createbigcannons/index/CBCItems.HARDENED_NITRO:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     403: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     406: aastore
+     407: dup
+     408: bipush        41
+     410: getstatic     #275                // Field rbasamoyai/createbigcannons/index/CBCItems.NITROPOWDER:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     413: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     416: aastore
+     417: dup
+     418: bipush        42
+     420: getstatic     #278                // Field rbasamoyai/createbigcannons/index/CBCItems.PACKED_GUNPOWDER:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     423: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     426: aastore
+     427: dup
+     428: bipush        43
+     430: getstatic     #281                // Field rbasamoyai/createbigcannons/index/CBCItems.GUNPOWDER_PINCH:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     433: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     436: aastore
+     437: dup
+     438: bipush        44
+     440: getstatic     #284                // Field rbasamoyai/createbigcannons/index/CBCItems.GUNCOTTON:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     443: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     446: aastore
+     447: dup
+     448: bipush        45
+     450: getstatic     #287                // Field rbasamoyai/createbigcannons/index/CBCItems.PACKED_GUNCOTTON:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     453: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     456: aastore
+     457: dup
+     458: bipush        46
+     460: getstatic     #290                // Field rbasamoyai/createbigcannons/index/CBCItems.EMPTY_POWDER_CHARGE:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     463: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     466: aastore
+     467: dup
+     468: bipush        47
+     470: getstatic     #293                // Field rbasamoyai/createbigcannons/index/CBCItems.SHOT_BALLS:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     473: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     476: aastore
+     477: dup
+     478: bipush        48
+     480: getstatic     #106                // Field rbasamoyai/createbigcannons/index/CBCBlocks.SOLID_SHOT:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     483: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     486: aastore
+     487: dup
+     488: bipush        49
+     490: getstatic     #296                // Field rbasamoyai/createbigcannons/index/CBCBlocks.AP_SHOT:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     493: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     496: aastore
+     497: dup
+     498: bipush        50
+     500: getstatic     #299                // Field rbasamoyai/createbigcannons/index/CBCBlocks.MORTAR_STONE:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     503: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     506: aastore
+     507: dup
+     508: bipush        51
+     510: getstatic     #302                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BAG_OF_GRAPESHOT:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     513: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     516: aastore
+     517: dup
+     518: bipush        52
+     520: getstatic     #305                // Field rbasamoyai/createbigcannons/index/CBCBlocks.HE_SHELL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     523: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     526: aastore
+     527: dup
+     528: bipush        53
+     530: getstatic     #308                // Field rbasamoyai/createbigcannons/index/CBCBlocks.AP_SHELL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     533: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     536: aastore
+     537: dup
+     538: bipush        54
+     540: getstatic     #311                // Field rbasamoyai/createbigcannons/index/CBCBlocks.SHRAPNEL_SHELL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     543: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     546: aastore
+     547: dup
+     548: bipush        55
+     550: getstatic     #314                // Field rbasamoyai/createbigcannons/index/CBCBlocks.FLUID_SHELL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     553: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     556: aastore
+     557: dup
+     558: bipush        56
+     560: getstatic     #317                // Field rbasamoyai/createbigcannons/index/CBCBlocks.SMOKE_SHELL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     563: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     566: aastore
+     567: dup
+     568: bipush        57
+     570: getstatic     #320                // Field rbasamoyai/createbigcannons/index/CBCBlocks.DROP_MORTAR_SHELL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     573: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     576: aastore
+     577: dup
+     578: bipush        58
+     580: getstatic     #323                // Field rbasamoyai/createbigcannons/index/CBCItems.IMPACT_FUZE:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     583: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     586: aastore
+     587: dup
+     588: bipush        59
+     590: bipush        20
+     592: invokestatic  #326                // Method rbasamoyai/createbigcannons/munitions/fuzes/TimedFuzeItem.getCreativeTabItem:(I)Lnet/minecraft/world/item/ItemStack;
+     595: aastore
+     596: dup
+     597: bipush        60
+     599: iconst_1
+     600: invokestatic  #331                // Method rbasamoyai/createbigcannons/munitions/fuzes/ProximityFuzeItem.getCreativeTabItem:(I)Lnet/minecraft/world/item/ItemStack;
+     603: aastore
+     604: dup
+     605: bipush        61
+     607: bipush        20
+     609: invokestatic  #334                // Method rbasamoyai/createbigcannons/munitions/fuzes/DelayedImpactFuzeItem.getCreativeTabItem:(I)Lnet/minecraft/world/item/ItemStack;
+     612: aastore
+     613: dup
+     614: bipush        62
+     616: getstatic     #337                // Field rbasamoyai/createbigcannons/index/CBCItems.WIRED_FUZE:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     619: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     622: aastore
+     623: dup
+     624: bipush        63
+     626: getstatic     #340                // Field rbasamoyai/createbigcannons/index/CBCItems.INERTIA_FUZE:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     629: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     632: aastore
+     633: dup
+     634: bipush        64
+     636: bipush        20
+     638: invokestatic  #343                // Method rbasamoyai/createbigcannons/munitions/fuzes/DelayedInertiaFuzeItem.getCreativeTabItem:(I)Lnet/minecraft/world/item/ItemStack;
+     641: aastore
+     642: dup
+     643: bipush        65
+     645: getstatic     #346                // Field rbasamoyai/createbigcannons/index/CBCItems.TRACER_TIP:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     648: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     651: aastore
+     652: dup
+     653: bipush        66
+     655: getstatic     #349                // Field rbasamoyai/createbigcannons/index/CBCItems.CANNON_WELDER:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     658: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     661: aastore
+     662: dup
+     663: bipush        67
+     665: getstatic     #352                // Field rbasamoyai/createbigcannons/index/CBCItems.CANNON_CRAFTING_WAND:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     668: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     671: aastore
+     672: dup
+     673: bipush        68
+     675: getstatic     #355                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CASTING_SAND:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     678: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     681: aastore
+     682: dup
+     683: bipush        69
+     685: getstatic     #358                // Field rbasamoyai/createbigcannons/index/CBCBlocks.VERY_SMALL_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     688: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     691: aastore
+     692: dup
+     693: bipush        70
+     695: getstatic     #361                // Field rbasamoyai/createbigcannons/index/CBCBlocks.SMALL_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     698: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     701: aastore
+     702: dup
+     703: bipush        71
+     705: getstatic     #364                // Field rbasamoyai/createbigcannons/index/CBCBlocks.MEDIUM_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     708: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     711: aastore
+     712: dup
+     713: bipush        72
+     715: getstatic     #367                // Field rbasamoyai/createbigcannons/index/CBCBlocks.LARGE_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     718: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     721: aastore
+     722: dup
+     723: bipush        73
+     725: getstatic     #370                // Field rbasamoyai/createbigcannons/index/CBCBlocks.VERY_LARGE_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     728: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     731: aastore
+     732: dup
+     733: bipush        74
+     735: getstatic     #373                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CANNON_END_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     738: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     741: aastore
+     742: dup
+     743: bipush        75
+     745: getstatic     #376                // Field rbasamoyai/createbigcannons/index/CBCBlocks.SLIDING_BREECH_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     748: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     751: aastore
+     752: dup
+     753: bipush        76
+     755: getstatic     #379                // Field rbasamoyai/createbigcannons/index/CBCBlocks.SCREW_BREECH_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     758: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     761: aastore
+     762: dup
+     763: bipush        77
+     765: getstatic     #382                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CANNON_DRILL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     768: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     771: aastore
+     772: dup
+     773: bipush        78
+     775: getstatic     #385                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CANNON_BUILDER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     778: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     781: aastore
+     782: dup
+     783: bipush        79
+     785: new           #138                // class net/minecraft/world/item/ItemStack
+     788: dup
+     789: getstatic     #388                // Field rbasamoyai/createbigcannons/index/CBCFluids.MOLTEN_CAST_IRON:Lcom/tterrag/registrate/util/entry/RegistryEntry;
+     792: invokevirtual #394                // Method com/tterrag/registrate/util/entry/RegistryEntry.get:()Ljava/lang/Object;
+     795: checkcast     #399                // class net/neoforged/neoforge/fluids/BaseFlowingFluid$Flowing
+     798: invokevirtual #401                // Method net/neoforged/neoforge/fluids/BaseFlowingFluid$Flowing.getBucket:()Lnet/minecraft/world/item/Item;
+     801: invokespecial #405                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+     804: aastore
+     805: dup
+     806: bipush        80
+     808: getstatic     #408                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_CAST_IRON_CANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     811: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     814: aastore
+     815: dup
+     816: bipush        81
+     818: getstatic     #411                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_CAST_IRON_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     821: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     824: aastore
+     825: dup
+     826: bipush        82
+     828: getstatic     #414                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_CAST_IRON_SLIDING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     831: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     834: aastore
+     835: dup
+     836: bipush        83
+     838: getstatic     #417                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_CAST_IRON_SLIDING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     841: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     844: aastore
+     845: dup
+     846: bipush        84
+     848: getstatic     #420                // Field rbasamoyai/createbigcannons/index/CBCItems.CAST_IRON_SLIDING_BREECHBLOCK:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     851: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     854: aastore
+     855: dup
+     856: bipush        85
+     858: new           #138                // class net/minecraft/world/item/ItemStack
+     861: dup
+     862: getstatic     #423                // Field rbasamoyai/createbigcannons/index/CBCFluids.MOLTEN_BRONZE:Lcom/tterrag/registrate/util/entry/RegistryEntry;
+     865: invokevirtual #394                // Method com/tterrag/registrate/util/entry/RegistryEntry.get:()Ljava/lang/Object;
+     868: checkcast     #399                // class net/neoforged/neoforge/fluids/BaseFlowingFluid$Flowing
+     871: invokevirtual #401                // Method net/neoforged/neoforge/fluids/BaseFlowingFluid$Flowing.getBucket:()Lnet/minecraft/world/item/Item;
+     874: invokespecial #405                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+     877: aastore
+     878: dup
+     879: bipush        86
+     881: getstatic     #426                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_BRONZE_CANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     884: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     887: aastore
+     888: dup
+     889: bipush        87
+     891: getstatic     #429                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_BRONZE_CANNON_CHAMBER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     894: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     897: aastore
+     898: dup
+     899: bipush        88
+     901: getstatic     #432                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_BRONZE_SLIDING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     904: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     907: aastore
+     908: dup
+     909: bipush        89
+     911: getstatic     #435                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_BRONZE_SLIDING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     914: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     917: aastore
+     918: dup
+     919: bipush        90
+     921: getstatic     #438                // Field rbasamoyai/createbigcannons/index/CBCItems.BRONZE_SLIDING_BREECHBLOCK:Lcom/tterrag/registrate/util/entry/ItemEntry;
+     924: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     927: aastore
+     928: dup
+     929: bipush        91
+     931: new           #138                // class net/minecraft/world/item/ItemStack
+     934: dup
+     935: getstatic     #441                // Field rbasamoyai/createbigcannons/index/CBCFluids.MOLTEN_STEEL:Lcom/tterrag/registrate/util/entry/RegistryEntry;
+     938: invokevirtual #394                // Method com/tterrag/registrate/util/entry/RegistryEntry.get:()Ljava/lang/Object;
+     941: checkcast     #399                // class net/neoforged/neoforge/fluids/BaseFlowingFluid$Flowing
+     944: invokevirtual #401                // Method net/neoforged/neoforge/fluids/BaseFlowingFluid$Flowing.getBucket:()Lnet/minecraft/world/item/Item;
+     947: invokespecial #405                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+     950: aastore
+     951: dup
+     952: bipush        92
+     954: getstatic     #444                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_VERY_SMALL_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     957: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     960: aastore
+     961: dup
+     962: bipush        93
+     964: getstatic     #447                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_SMALL_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     967: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     970: aastore
+     971: dup
+     972: bipush        94
+     974: getstatic     #450                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_MEDIUM_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     977: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     980: aastore
+     981: dup
+     982: bipush        95
+     984: getstatic     #453                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_LARGE_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     987: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+     990: aastore
+     991: dup
+     992: bipush        96
+     994: getstatic     #456                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_VERY_LARGE_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+     997: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1000: aastore
+    1001: dup
+    1002: bipush        97
+    1004: getstatic     #459                // Field rbasamoyai/createbigcannons/index/CBCBlocks.VERY_SMALL_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1007: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1010: aastore
+    1011: dup
+    1012: bipush        98
+    1014: getstatic     #462                // Field rbasamoyai/createbigcannons/index/CBCBlocks.SMALL_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1017: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1020: aastore
+    1021: dup
+    1022: bipush        99
+    1024: getstatic     #465                // Field rbasamoyai/createbigcannons/index/CBCBlocks.MEDIUM_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1027: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1030: aastore
+    1031: dup
+    1032: bipush        100
+    1034: getstatic     #468                // Field rbasamoyai/createbigcannons/index/CBCBlocks.LARGE_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1037: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1040: aastore
+    1041: dup
+    1042: bipush        101
+    1044: getstatic     #471                // Field rbasamoyai/createbigcannons/index/CBCBlocks.VERY_LARGE_STEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1047: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1050: aastore
+    1051: dup
+    1052: bipush        102
+    1054: getstatic     #474                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_STEEL_SLIDING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1057: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1060: aastore
+    1061: dup
+    1062: bipush        103
+    1064: getstatic     #477                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_STEEL_SLIDING_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1067: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1070: aastore
+    1071: dup
+    1072: bipush        104
+    1074: getstatic     #480                // Field rbasamoyai/createbigcannons/index/CBCItems.STEEL_SLIDING_BREECHBLOCK:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1077: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1080: aastore
+    1081: dup
+    1082: bipush        105
+    1084: getstatic     #483                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_STEEL_SCREW_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1087: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1090: aastore
+    1091: dup
+    1092: bipush        106
+    1094: getstatic     #486                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_STEEL_SCREW_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1097: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1100: aastore
+    1101: dup
+    1102: bipush        107
+    1104: getstatic     #489                // Field rbasamoyai/createbigcannons/index/CBCItems.STEEL_SCREW_LOCK:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1107: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1110: aastore
+    1111: dup
+    1112: bipush        108
+    1114: new           #138                // class net/minecraft/world/item/ItemStack
+    1117: dup
+    1118: getstatic     #492                // Field rbasamoyai/createbigcannons/index/CBCFluids.MOLTEN_NETHERSTEEL:Lcom/tterrag/registrate/util/entry/RegistryEntry;
+    1121: invokevirtual #394                // Method com/tterrag/registrate/util/entry/RegistryEntry.get:()Ljava/lang/Object;
+    1124: checkcast     #399                // class net/neoforged/neoforge/fluids/BaseFlowingFluid$Flowing
+    1127: invokevirtual #401                // Method net/neoforged/neoforge/fluids/BaseFlowingFluid$Flowing.getBucket:()Lnet/minecraft/world/item/Item;
+    1130: invokespecial #405                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+    1133: aastore
+    1134: dup
+    1135: bipush        109
+    1137: getstatic     #495                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_VERY_SMALL_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1140: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1143: aastore
+    1144: dup
+    1145: bipush        110
+    1147: getstatic     #498                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_SMALL_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1150: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1153: aastore
+    1154: dup
+    1155: bipush        111
+    1157: getstatic     #501                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_MEDIUM_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1160: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1163: aastore
+    1164: dup
+    1165: bipush        112
+    1167: getstatic     #504                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_LARGE_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1170: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1173: aastore
+    1174: dup
+    1175: bipush        113
+    1177: getstatic     #507                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_VERY_LARGE_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1180: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1183: aastore
+    1184: dup
+    1185: bipush        114
+    1187: getstatic     #510                // Field rbasamoyai/createbigcannons/index/CBCBlocks.VERY_SMALL_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1190: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1193: aastore
+    1194: dup
+    1195: bipush        115
+    1197: getstatic     #513                // Field rbasamoyai/createbigcannons/index/CBCBlocks.SMALL_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1200: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1203: aastore
+    1204: dup
+    1205: bipush        116
+    1207: getstatic     #516                // Field rbasamoyai/createbigcannons/index/CBCBlocks.MEDIUM_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1210: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1213: aastore
+    1214: dup
+    1215: bipush        117
+    1217: getstatic     #519                // Field rbasamoyai/createbigcannons/index/CBCBlocks.LARGE_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1220: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1223: aastore
+    1224: dup
+    1225: bipush        118
+    1227: getstatic     #522                // Field rbasamoyai/createbigcannons/index/CBCBlocks.VERY_LARGE_NETHERSTEEL_CANNON_LAYER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1230: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1233: aastore
+    1234: dup
+    1235: bipush        119
+    1237: getstatic     #525                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_NETHERSTEEL_SCREW_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1240: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1243: aastore
+    1244: dup
+    1245: bipush        120
+    1247: getstatic     #528                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_NETHERSTEEL_SCREW_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1250: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1253: aastore
+    1254: dup
+    1255: bipush        121
+    1257: getstatic     #531                // Field rbasamoyai/createbigcannons/index/CBCItems.NETHERSTEEL_SCREW_LOCK:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1260: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1263: aastore
+    1264: dup
+    1265: bipush        122
+    1267: getstatic     #534                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BASIN_FOUNDRY_LID:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1270: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1273: aastore
+    1274: dup
+    1275: bipush        123
+    1277: getstatic     #537                // Field rbasamoyai/createbigcannons/index/CBCItems.CAST_IRON_NUGGET:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1280: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1283: aastore
+    1284: dup
+    1285: bipush        124
+    1287: getstatic     #540                // Field rbasamoyai/createbigcannons/index/CBCItems.CAST_IRON_INGOT:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1290: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1293: aastore
+    1294: dup
+    1295: bipush        125
+    1297: getstatic     #543                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CAST_IRON_BLOCK:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1300: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1303: aastore
+    1304: dup
+    1305: bipush        126
+    1307: getstatic     #546                // Field rbasamoyai/createbigcannons/index/CBCItems.BRONZE_SCRAP:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1310: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1313: aastore
+    1314: dup
+    1315: bipush        127
+    1317: getstatic     #549                // Field rbasamoyai/createbigcannons/index/CBCItems.BRONZE_INGOT:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1320: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1323: aastore
+    1324: dup
+    1325: sipush        128
+    1328: getstatic     #552                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BRONZE_BLOCK:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1331: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1334: aastore
+    1335: dup
+    1336: sipush        129
+    1339: getstatic     #555                // Field rbasamoyai/createbigcannons/index/CBCItems.STEEL_SCRAP:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1342: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1345: aastore
+    1346: dup
+    1347: sipush        130
+    1350: getstatic     #558                // Field rbasamoyai/createbigcannons/index/CBCItems.STEEL_INGOT:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1353: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1356: aastore
+    1357: dup
+    1358: sipush        131
+    1361: getstatic     #561                // Field rbasamoyai/createbigcannons/index/CBCBlocks.STEEL_BLOCK:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1364: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1367: aastore
+    1368: dup
+    1369: sipush        132
+    1372: getstatic     #564                // Field rbasamoyai/createbigcannons/index/CBCItems.NETHERSTEEL_NUGGET:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1375: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1378: aastore
+    1379: dup
+    1380: sipush        133
+    1383: getstatic     #567                // Field rbasamoyai/createbigcannons/index/CBCItems.NETHERSTEEL_INGOT:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1386: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1389: aastore
+    1390: dup
+    1391: sipush        134
+    1394: getstatic     #570                // Field rbasamoyai/createbigcannons/index/CBCBlocks.NETHERSTEEL_BLOCK:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1397: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1400: aastore
+    1401: dup
+    1402: sipush        135
+    1405: getstatic     #573                // Field rbasamoyai/createbigcannons/index/CBCItems.GAS_MASK:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1408: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1411: aastore
+    1412: dup
+    1413: sipush        136
+    1416: getstatic     #576                // Field rbasamoyai/createbigcannons/index/CBCItems.RAM_ROD:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1419: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1422: aastore
+    1423: dup
+    1424: sipush        137
+    1427: getstatic     #579                // Field rbasamoyai/createbigcannons/index/CBCItems.WORM:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1430: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1433: aastore
+    1434: dup
+    1435: sipush        138
+    1438: getstatic     #582                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CANNON_CARRIAGE:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1441: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1444: aastore
+    1445: dup
+    1446: sipush        139
+    1449: getstatic     #585                // Field rbasamoyai/createbigcannons/index/CBCItems.PAIR_OF_CANNON_WHEELS:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1452: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1455: aastore
+    1456: dup
+    1457: sipush        140
+    1460: getstatic     #588                // Field rbasamoyai/createbigcannons/index/CBCItems.QUICKFIRING_MECHANISM:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1463: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1466: aastore
+    1467: dup
+    1468: sipush        141
+    1471: getstatic     #591                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CAST_IRON_AUTOCANNON_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1474: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1477: aastore
+    1478: dup
+    1479: sipush        142
+    1482: getstatic     #594                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CAST_IRON_AUTOCANNON_RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1485: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1488: aastore
+    1489: dup
+    1490: sipush        143
+    1493: getstatic     #597                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CAST_IRON_AUTOCANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1496: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1499: aastore
+    1500: dup
+    1501: sipush        144
+    1504: getstatic     #600                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BRONZE_AUTOCANNON_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1507: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1510: aastore
+    1511: dup
+    1512: sipush        145
+    1515: getstatic     #603                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BRONZE_AUTOCANNON_RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1518: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1521: aastore
+    1522: dup
+    1523: sipush        146
+    1526: getstatic     #606                // Field rbasamoyai/createbigcannons/index/CBCBlocks.BRONZE_AUTOCANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1529: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1532: aastore
+    1533: dup
+    1534: sipush        147
+    1537: getstatic     #609                // Field rbasamoyai/createbigcannons/index/CBCBlocks.STEEL_AUTOCANNON_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1540: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1543: aastore
+    1544: dup
+    1545: sipush        148
+    1548: getstatic     #612                // Field rbasamoyai/createbigcannons/index/CBCBlocks.STEEL_AUTOCANNON_RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1551: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1554: aastore
+    1555: dup
+    1556: sipush        149
+    1559: getstatic     #615                // Field rbasamoyai/createbigcannons/index/CBCBlocks.STEEL_AUTOCANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1562: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1565: aastore
+    1566: dup
+    1567: sipush        150
+    1570: getstatic     #618                // Field rbasamoyai/createbigcannons/index/CBCItems.AUTOCANNON_CARTRIDGE_SHEET:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1573: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1576: aastore
+    1577: dup
+    1578: sipush        151
+    1581: getstatic     #621                // Field rbasamoyai/createbigcannons/index/CBCItems.EMPTY_AUTOCANNON_CARTRIDGE:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1584: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1587: aastore
+    1588: dup
+    1589: sipush        152
+    1592: getstatic     #624                // Field rbasamoyai/createbigcannons/index/CBCItems.FILLED_AUTOCANNON_CARTRIDGE:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1595: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1598: aastore
+    1599: dup
+    1600: sipush        153
+    1603: getstatic     #627                // Field rbasamoyai/createbigcannons/index/CBCItems.AP_AUTOCANNON_ROUND:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1606: invokevirtual #630                // Method com/tterrag/registrate/util/entry/ItemEntry.get:()Ljava/lang/Object;
+    1609: checkcast     #631                // class rbasamoyai/createbigcannons/munitions/autocannon/ap_round/APAutocannonRoundItem
+    1612: invokevirtual #633                // Method rbasamoyai/createbigcannons/munitions/autocannon/ap_round/APAutocannonRoundItem.getCreativeTabCartridgeItem:()Lnet/minecraft/world/item/ItemStack;
+    1615: aastore
+    1616: dup
+    1617: sipush        154
+    1620: getstatic     #627                // Field rbasamoyai/createbigcannons/index/CBCItems.AP_AUTOCANNON_ROUND:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1623: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1626: aastore
+    1627: dup
+    1628: sipush        155
+    1631: getstatic     #636                // Field rbasamoyai/createbigcannons/index/CBCItems.FLAK_AUTOCANNON_ROUND:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1634: invokevirtual #630                // Method com/tterrag/registrate/util/entry/ItemEntry.get:()Ljava/lang/Object;
+    1637: checkcast     #639                // class rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonRoundItem
+    1640: invokevirtual #641                // Method rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonRoundItem.getCreativeTabCartridgeItem:()Lnet/minecraft/world/item/ItemStack;
+    1643: aastore
+    1644: dup
+    1645: sipush        156
+    1648: getstatic     #636                // Field rbasamoyai/createbigcannons/index/CBCItems.FLAK_AUTOCANNON_ROUND:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1651: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1654: aastore
+    1655: dup
+    1656: sipush        157
+    1659: getstatic     #642                // Field rbasamoyai/createbigcannons/index/CBCItems.MACHINE_GUN_ROUND:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1662: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1665: aastore
+    1666: dup
+    1667: sipush        158
+    1670: getstatic     #645                // Field rbasamoyai/createbigcannons/index/CBCItems.EMPTY_MACHINE_GUN_ROUND:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1673: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1676: aastore
+    1677: dup
+    1678: sipush        159
+    1681: getstatic     #648                // Field rbasamoyai/createbigcannons/index/CBCBlocks.AUTOCANNON_AMMO_CONTAINER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1684: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1687: aastore
+    1688: dup
+    1689: sipush        160
+    1692: getstatic     #651                // Field rbasamoyai/createbigcannons/index/CBCBlocks.CREATIVE_AUTOCANNON_AMMO_CONTAINER:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1695: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1698: aastore
+    1699: dup
+    1700: sipush        161
+    1703: getstatic     #654                // Field rbasamoyai/createbigcannons/index/CBCItems.RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1706: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1709: aastore
+    1710: dup
+    1711: sipush        162
+    1714: getstatic     #657                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_CAST_IRON_AUTOCANNON_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1717: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1720: aastore
+    1721: dup
+    1722: sipush        163
+    1725: getstatic     #660                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_CAST_IRON_AUTOCANNON_RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1728: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1731: aastore
+    1732: dup
+    1733: sipush        164
+    1736: getstatic     #663                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_CAST_IRON_AUTOCANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1739: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1742: aastore
+    1743: dup
+    1744: sipush        165
+    1747: getstatic     #666                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_CAST_IRON_AUTOCANNON_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1750: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1753: aastore
+    1754: dup
+    1755: sipush        166
+    1758: getstatic     #669                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_CAST_IRON_AUTOCANNON_RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1761: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1764: aastore
+    1765: dup
+    1766: sipush        167
+    1769: getstatic     #672                // Field rbasamoyai/createbigcannons/index/CBCItems.CAST_IRON_AUTOCANNON_BREECH_EXTRACTOR:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1772: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1775: aastore
+    1776: dup
+    1777: sipush        168
+    1780: getstatic     #675                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_BRONZE_AUTOCANNON_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1783: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1786: aastore
+    1787: dup
+    1788: sipush        169
+    1791: getstatic     #678                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_BRONZE_AUTOCANNON_RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1794: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1797: aastore
+    1798: dup
+    1799: sipush        170
+    1802: getstatic     #681                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_BRONZE_AUTOCANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1805: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1808: aastore
+    1809: dup
+    1810: sipush        171
+    1813: getstatic     #684                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_BRONZE_AUTOCANNON_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1816: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1819: aastore
+    1820: dup
+    1821: sipush        172
+    1824: getstatic     #687                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_BRONZE_AUTOCANNON_RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1827: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1830: aastore
+    1831: dup
+    1832: sipush        173
+    1835: getstatic     #690                // Field rbasamoyai/createbigcannons/index/CBCItems.BRONZE_AUTOCANNON_BREECH_EXTRACTOR:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1838: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1841: aastore
+    1842: dup
+    1843: sipush        174
+    1846: getstatic     #693                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_STEEL_AUTOCANNON_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1849: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1852: aastore
+    1853: dup
+    1854: sipush        175
+    1857: getstatic     #696                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_STEEL_AUTOCANNON_RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1860: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1863: aastore
+    1864: dup
+    1865: sipush        176
+    1868: getstatic     #699                // Field rbasamoyai/createbigcannons/index/CBCBlocks.UNBORED_STEEL_AUTOCANNON_BARREL:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1871: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1874: aastore
+    1875: dup
+    1876: sipush        177
+    1879: getstatic     #702                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_STEEL_AUTOCANNON_BREECH:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1882: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1885: aastore
+    1886: dup
+    1887: sipush        178
+    1890: getstatic     #705                // Field rbasamoyai/createbigcannons/index/CBCBlocks.INCOMPLETE_STEEL_AUTOCANNON_RECOIL_SPRING:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1893: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1896: aastore
+    1897: dup
+    1898: sipush        179
+    1901: getstatic     #708                // Field rbasamoyai/createbigcannons/index/CBCItems.STEEL_AUTOCANNON_BREECH_EXTRACTOR:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1904: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1907: aastore
+    1908: dup
+    1909: sipush        180
+    1912: getstatic     #711                // Field rbasamoyai/createbigcannons/index/CBCBlocks.AUTOCANNON_BREECH_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1915: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1918: aastore
+    1919: dup
+    1920: sipush        181
+    1923: getstatic     #714                // Field rbasamoyai/createbigcannons/index/CBCBlocks.AUTOCANNON_RECOIL_SPRING_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1926: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1929: aastore
+    1930: dup
+    1931: sipush        182
+    1934: getstatic     #717                // Field rbasamoyai/createbigcannons/index/CBCBlocks.AUTOCANNON_BARREL_CAST_MOULD:Lcom/tterrag/registrate/util/entry/BlockEntry;
+    1937: invokevirtual #143                // Method com/tterrag/registrate/util/entry/BlockEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1940: aastore
+    1941: dup
+    1942: sipush        183
+    1945: getstatic     #720                // Field rbasamoyai/createbigcannons/index/CBCItems.SPRING_WIRE:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1948: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1951: aastore
+    1952: dup
+    1953: sipush        184
+    1956: getstatic     #723                // Field rbasamoyai/createbigcannons/index/CBCItems.BLOCK_ARMOR_INSPECTION_TOOL:Lcom/tterrag/registrate/util/entry/ItemEntry;
+    1959: invokevirtual #266                // Method com/tterrag/registrate/util/entry/ItemEntry.asStack:()Lnet/minecraft/world/item/ItemStack;
+    1962: aastore
+    1963: invokestatic  #726                // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+    1966: invokeinterface #732,  2          // InterfaceMethod net/minecraft/world/item/CreativeModeTab$Output.acceptAll:(Ljava/util/Collection;)V
+    1971: return
+
+  static {};
+    Code:
+       0: ldc_w         #738                // String base
+       3: invokestatic  #23                 // Method makeKey:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceKey;
+       6: putstatic     #740                // Field MAIN_TAB_KEY:Lnet/minecraft/resources/ResourceKey;
+       9: getstatic     #72                 // Field net/minecraft/core/registries/Registries.CREATIVE_MODE_TAB:Lnet/minecraft/resources/ResourceKey;
+      12: ldc_w         #743                // String createbigcannons
+      15: invokestatic  #745                // Method net/neoforged/neoforge/registries/DeferredRegister.create:(Lnet/minecraft/resources/ResourceKey;Ljava/lang/String;)Lnet/neoforged/neoforge/registries/DeferredRegister;
+      18: putstatic     #7                  // Field TAB_REGISTER:Lnet/neoforged/neoforge/registries/DeferredRegister;
+      21: new           #748                // class java/util/HashMap
+      24: dup
+      25: invokespecial #750                // Method java/util/HashMap."<init>":()V
+      28: putstatic     #19                 // Field TABS:Ljava/util/Map;
+      31: ldc_w         #738                // String base
+      34: invokedynamic #751,  0            // InvokeDynamic #2:get:()Ljava/util/function/Supplier;
+      39: invokestatic  #754                // Method wrapGroup:(Ljava/lang/String;Ljava/util/function/Supplier;)Ljava/util/function/Supplier;
+      42: putstatic     #758                // Field GROUP:Ljava/util/function/Supplier;
+      45: return
+}

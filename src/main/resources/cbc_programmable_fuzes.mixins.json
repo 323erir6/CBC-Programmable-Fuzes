@@ -1,0 +1,22 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "ua.ivan.cbcprogrammablefuzes.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntityRemovalMixin",
+    "MountedBigCannonContraptionMixin",
+    "NeoCannonMountPeripheralMixin",
+    "BigCannonProjectileBlockEntityMixin",
+    "ProjectileBlockMixin",
+    "FuzedBlockEntityMixin",
+    "FuzedProjectileBlockMixin",
+    "FuzedBigCannonProjectileMixin",
+    "EnhancedShellsRocketMixin",
+    "FlakAutocannonProjectileMixin",
+    "AbstractCannonProjectileMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

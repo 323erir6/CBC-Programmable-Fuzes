@@ -1,0 +1,13 @@
+{
+  "item.cbc_programmable_fuzes.programmable_fuze": "Programmable Fuze",
+  "item.cbc_programmable_fuzes.programmable_fuze.proximity": "Proximity: %s, radius %s m",
+  "item.cbc_programmable_fuzes.programmable_fuze.timer": "Timer: %s, %s s",
+  "item.cbc_programmable_fuzes.programmable_fuze.persistent": "Prevent projectile despawn: %s",
+  "item.cbc_programmable_fuzes.programmable_fuze.computer": "Configure through an adjacent CC:Tweaked computer",
+  "item.cbc_programmable_fuzes.trajectory_correction_module": "Active Trajectory-Correction Tail Module",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.channel": "Channel: %s",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.target": "Target: %s, %s, %s",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.no_target": "Target is not programmed",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.install": "Install/remove on the projectile's rear face",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.persistent": "Prevent projectile despawn: %s"
+}

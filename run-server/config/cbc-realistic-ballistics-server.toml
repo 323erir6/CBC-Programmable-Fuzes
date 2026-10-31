@@ -1,0 +1,253 @@
+#Physical trajectory model for Create: Big Cannons.
+#Flight and, by default, impact calculations use the same physical speed.
+#Explosion power and projectile toughness values are not changed by this mod.
+[ballistics]
+	#Master switch.
+	enabled = true
+	#Apply to big-cannon projectiles and addon subclasses.
+	affectBigCannons = true
+	#Apply to autocannon and machine-gun projectiles.
+	affectAutocannons = true
+	#Keep CBC's original impact speed for penetration, block damage and impact force.
+	#When disabled, impacts use the physical speed produced by this mod's trajectory.
+	#Disabled by default so aerodynamic energy loss also affects the impact.
+	preserveOriginalImpactEnergy = false
+	#Prevent lifetime despawn while CBC projectiles and addon subclasses are still flying.
+	#Spent or embedded projectiles are cleaned up normally, preventing invisible ghost entities.
+	#Impact, detonation and explicit removal still work. This does not change or overwrite
+	#the programmable-fuze persistence setting, so both mods can be installed together.
+	disableProjectileDespawn = true
+	#Hard maximum lifetime for every CBC projectile and addon subclass, in seconds.
+	#The default 600 seconds is ten minutes. This safety timeout still applies when
+	#disableProjectileDespawn or programmable-fuze persistence keeps a flying round alive.
+	# Default: 600.0
+	# Range: 1.0 ~ 86400.0
+	projectileDespawnTimeoutSeconds = 600.0
+	#Remove every CBC projectile or addon subclass after it has remained practically
+	#motionless for this many seconds. This cleanup is independent of projectile type,
+	#native lifetime, disableProjectileDespawn and programmable-fuze persistence.
+	#Movement immediately resets the timer. The default is 30 seconds.
+	# Default: 30.0
+	# Range: 1.0 ~ 3600.0
+	stationaryProjectileTimeoutSeconds = 30.0
+	#Keep every non-20-mm CBC projectile moving through unloaded and ungenerated chunks from its
+	#first flight tick. High flight remains ticket-free; below Y=350 a bounded asynchronous
+	#planner warms only the final corridor one chunk at a time. Blocks in already loaded chunks,
+	#entities and Sable constructs still collide without streaming every route chunk.
+	#Entity and Sable collision remains active throughout the flight. Only actual 20 mm
+	#autocannon, machine-gun, rotary and twin-autocannon rounds are deliberately excluded.
+	#Military Supplement's 60/80/125/180 mm cannon rounds remain enabled.
+	highAltitudeTransitEnabled = true
+	#Legacy compatibility value retained so existing configs remain valid.
+	#Seamless transit now starts on the first projectile tick at every altitude.
+	# Default: 350.0
+	# Range: -2048.0 ~ 3.0E7
+	highAltitudeTransitMinY = 350.0
+	#Enable the slow-tick profiler and its performance log.
+	#Disabled by default because production flight should not pay for timers,
+	#per-tick metric objects or stack sampling. Enable only while diagnosing TPS.
+	performanceDiagnostics = false
+
+	#Environment and atmosphere
+	[ballistics.environment]
+		#Gravitational acceleration. Earth standard is 9.80665 m/s^2.
+		# Default: 9.80665
+		# Range: 0.0 ~ 100.0
+		gravityMetresPerSecondSquared = 9.80665
+		#World Y treated as sea level.
+		# Default: 64.0
+		# Range: -2048.0 ~ 4096.0
+		seaLevelY = 64.0
+		#Atmospheric scale height. Earth's troposphere is approximately 8500 m.
+		# Default: 8500.0
+		# Range: 100.0 ~ 100000.0
+		atmosphericScaleHeightMetres = 8500.0
+		#Reference material density. 7800 kg/m^3 is ordinary steel.
+		# Default: 7800.0
+		# Range: 100.0 ~ 30000.0
+		projectileDensityKgPerCubicMetre = 7800.0
+		#Estimated projectile length divided by calibre.
+		# Default: 3.0
+		# Range: 0.5 ~ 10.0
+		projectileLengthInCalibers = 3.0
+		#Fraction of the bounding cylinder occupied by metal/explosive. 0.5 gives roughly 4.7 tonnes for a 0.8 m CBC HE shell.
+		# Default: 0.5
+		# Range: 0.05 ~ 1.0
+		projectileSolidFraction = 0.5
+		#Use known real-world nominal calibres for supported addon cannon families instead of
+		#their visually enlarged Minecraft entity hitboxes.
+		useNominalCaliberOverrides = true
+		#Nominal calibre of the standard Create: Big Cannons big cannon.
+		#The default treats it as an 875 mm cannon.
+		# Default: 0.875
+		# Range: 0.01 ~ 2.0
+		cbcBigCannonCaliberMetres = 0.875
+		#Nominal calibre of CBC autocannons, rotary cannons and twin autocannons.
+		#The default treats these weapons as 20 mm autocannons.
+		# Default: 0.02
+		# Range: 0.005 ~ 0.5
+		autocannonCaliberMetres = 0.02
+		#Nominal calibre of the CBC AT Heavy Autocannon.
+		#The default treats it as a 45 mm autocannon.
+		# Default: 0.045
+		# Range: 0.005 ~ 0.5
+		heavyAutocannonCaliberMetres = 0.045
+		#CBC Modern Warfare Medium Cannon calibre. The default treats it as a 155 mm gun.
+		# Default: 0.155
+		# Range: 0.01 ~ 2.0
+		mediumCannonCaliberMetres = 0.155
+		#Military Supplement Small Single and Small Dual Cannon calibre (60 mm).
+		# Default: 0.06
+		# Range: 0.01 ~ 2.0
+		militarySmallCannonCaliberMetres = 0.06
+		#Military Supplement Medium Single and Medium Dual Cannon calibre (80 mm).
+		# Default: 0.08
+		# Range: 0.01 ~ 2.0
+		militaryMediumCannonCaliberMetres = 0.08
+		#Military Supplement Large Cannon calibre (125 mm).
+		# Default: 0.125
+		# Range: 0.01 ~ 2.0
+		militaryLargeCannonCaliberMetres = 0.125
+		#Military Supplement Giant Cannon calibre (180 mm).
+		# Default: 0.18
+		# Range: 0.01 ~ 2.0
+		militaryGiantCannonCaliberMetres = 0.18
+		#Physical muzzle velocity of Military Supplement Small Single/Dual Cannons.
+		# Default: 800.0
+		# Range: 1.0 ~ 5000.0
+		militarySmallCannonMuzzleVelocityMetresPerSecond = 800.0
+		#Physical muzzle velocity of Military Supplement Medium Single/Dual Cannons.
+		# Default: 800.0
+		# Range: 1.0 ~ 5000.0
+		militaryMediumCannonMuzzleVelocityMetresPerSecond = 800.0
+		#Physical muzzle velocity of Military Supplement Large Cannons.
+		# Default: 800.0
+		# Range: 1.0 ~ 5000.0
+		militaryLargeCannonMuzzleVelocityMetresPerSecond = 800.0
+		#Physical muzzle velocity of Military Supplement Giant Cannons.
+		# Default: 800.0
+		# Range: 1.0 ~ 5000.0
+		militaryGiantCannonMuzzleVelocityMetresPerSecond = 800.0
+		#Create: Big Cannons Drop Mortar calibre (120 mm).
+		# Default: 0.12
+		# Range: 0.01 ~ 2.0
+		dropMortarCaliberMetres = 0.12
+		#Nominal calibre for supported torpedo tubes from every addon (380 mm).
+		# Default: 0.38
+		# Range: 0.01 ~ 2.0
+		torpedoTubeCaliberMetres = 0.38
+		#CBC AT Rocket Pod calibre (70 mm).
+		# Default: 0.07
+		# Range: 0.01 ~ 2.0
+		rocketPodCaliberMetres = 0.07
+		#CBC AT Medium Rocket Rail calibre (122 mm).
+		# Default: 0.122
+		# Range: 0.01 ~ 2.0
+		mediumRocketRailCaliberMetres = 0.122
+		#Aerodynamic drag coefficient used by CBC AT rockets during powered
+		#and unpowered flight. Rockets are long fin-stabilised bodies, not short shells.
+		# Default: 0.12
+		# Range: 0.01 ~ 2.0
+		rocketDragCoefficient = 0.12
+		#Effective rocket body length divided by calibre for aerodynamic mass estimation.
+		#This is separate from the ordinary shell length setting.
+		# Default: 12.0
+		# Range: 1.0 ~ 40.0
+		rocketLengthInCalibers = 12.0
+		#Safety limit for aerodynamic rocket speed loss in one tick.
+		#0.02 means no atmosphere calculation can remove more than 2 percent per tick.
+		# Default: 0.02
+		# Range: 1.0E-4 ~ 0.25
+		rocketMaximumSpeedLossPerTick = 0.02
+		#Motor multiplier for 70 mm CBC AT Rocket Pod projectiles.
+		#Calibrated together with the rocket coast model for an approximately 8 km envelope
+		#with 54 fuel ticks and the default atmosphere.
+		# Default: 0.294
+		# Range: 0.0 ~ 2.0
+		smallRocketThrustMultiplier = 0.294
+		#Motor multiplier for 122 mm CBC AT Medium Rocket Rail projectiles.
+		#Calibrated together with the rocket coast model for an approximately 25 km envelope
+		#with 54 fuel ticks and the default atmosphere.
+		# Default: 0.3285
+		# Range: 0.0 ~ 2.0
+		mediumRocketThrustMultiplier = 0.3285
+
+	#Config-seeded static wind field. At fixed coordinates and fixed weather, wind never changes.
+	#The configured seed is authoritative, so in-game computers and external calculators can
+	#reproduce the server wind without access to Minecraft's private world seed.
+	[ballistics.wind]
+		#Master switch for wind and turbulence.
+		enabled = true
+		#Prevailing horizontal wind speed during clear weather.
+		# Default: 4.0
+		# Range: 0.0 ~ 100.0
+		speedMetresPerSecond = 4.0
+		#Direction the wind moves toward: 0 = +Z, 90 = +X.
+		# Default: 35.0
+		# Range: -360.0 ~ 360.0
+		directionDegrees = 35.0
+		#Amplitude of static seed-derived spatial wind variation.
+		# Default: 3.0
+		# Range: 0.0 ~ 50.0
+		gustSpeedMetresPerSecond = 3.0
+		#Make wind respond to the current Minecraft weather.
+		#Rain and thunder create additional wind and turbulence even when
+		#the configured clear-weather speed and gust are both zero.
+		weatherAffectsWind = true
+		#Approximate size of one smoothly interpolated wind region in blocks/metres.
+		#Larger values make wind more uniform along long trajectories.
+		# Default: 2048.0
+		# Range: 16.0 ~ 1000000.0
+		regionSizeMetres = 2048.0
+		#Authoritative wind-map seed. Change it to generate a different static wind map.
+		# Default: 0
+		# Range: -9223372036854775808 ~ 9223372036854775807
+		seedSalt = 0
+		#Maximum seed-derived direction deviation from directionDegrees.
+		# Default: 45.0
+		# Range: 0.0 ~ 180.0
+		directionVariationDegrees = 45.0
+		#Seed-derived regional multiplier applied to prevailing wind speed.
+		#0.35 means regions vary by up to plus or minus 35 percent.
+		# Default: 0.35
+		# Range: 0.0 ~ 1.0
+		speedVariationFraction = 0.35
+		#Horizontal wind added by full rain.
+		# Default: 5.0
+		# Range: 0.0 ~ 100.0
+		rainWindBonusMetresPerSecond = 5.0
+		#Additional horizontal wind added by full thunder.
+		# Default: 7.0
+		# Range: 0.0 ~ 100.0
+		thunderWindBonusMetresPerSecond = 7.0
+		#Extra static spatial variation amplitude during rain.
+		# Default: 2.0
+		# Range: 0.0 ~ 50.0
+		rainGustBonusMetresPerSecond = 2.0
+		#Extra static spatial variation amplitude during thunder.
+		# Default: 5.0
+		# Range: 0.0 ~ 50.0
+		thunderGustBonusMetresPerSecond = 5.0
+		#Vertical component as a fraction of the spatial variation amplitude.
+		# Default: 0.04
+		# Range: 0.0 ~ 1.0
+		verticalTurbulenceFraction = 0.04
+		#Maximum wind-speed multiplier reached at high altitude. 1 disables altitude strengthening.
+		# Default: 1.55
+		# Range: 1.0 ~ 10.0
+		altitudeWindMaximumMultiplier = 1.55
+
+	#Small long-range effects
+	[ballistics.earthEffects]
+		#Enable Coriolis deflection.
+		enableCoriolis = true
+		#Latitude used by the Coriolis model.
+		# Default: 45.0
+		# Range: -90.0 ~ 90.0
+		latitudeDegrees = 45.0
+		#Enable a small right-hand-rifling spin drift. Disable for smoothbore-only worlds.
+		enableSpinDrift = true
+		#Dimensionless spin-drift strength. The default is deliberately subtle.
+		# Default: 0.02
+		# Range: -0.25 ~ 0.25
+		spinDriftFactor = 0.02

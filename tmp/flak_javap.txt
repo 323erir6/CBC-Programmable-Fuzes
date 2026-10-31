@@ -1,0 +1,308 @@
+Compiled from "FlakAutocannonProjectile.java"
+public class rbasamoyai.createbigcannons.munitions.autocannon.flak.FlakAutocannonProjectile extends rbasamoyai.createbigcannons.munitions.autocannon.AbstractAutocannonProjectile {
+  private net.minecraft.world.item.ItemStack fuze;
+
+  public rbasamoyai.createbigcannons.munitions.autocannon.flak.FlakAutocannonProjectile(net.minecraft.world.entity.EntityType<? extends rbasamoyai.createbigcannons.munitions.autocannon.flak.FlakAutocannonProjectile>, net.minecraft.world.level.Level);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokespecial #1                  // Method rbasamoyai/createbigcannons/munitions/autocannon/AbstractAutocannonProjectile."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;)V
+       6: aload_0
+       7: getstatic     #7                  // Field net/minecraft/world/item/ItemStack.EMPTY:Lnet/minecraft/world/item/ItemStack;
+      10: putfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+      13: return
+
+  public void tick();
+    Code:
+       0: aload_0
+       1: invokespecial #18                 // Method rbasamoyai/createbigcannons/munitions/autocannon/AbstractAutocannonProjectile.tick:()V
+       4: aload_0
+       5: aload_0
+       6: invokedynamic #22,  0             // InvokeDynamic #0:test:(Lrbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectile;)Ljava/util/function/Predicate;
+      11: invokevirtual #26                 // Method canDetonate:(Ljava/util/function/Predicate;)Z
+      14: ifeq          30
+      17: aload_0
+      18: aload_0
+      19: invokevirtual #30                 // Method position:()Lnet/minecraft/world/phys/Vec3;
+      22: invokevirtual #34                 // Method detonate:(Lnet/minecraft/core/Position;)V
+      25: aload_0
+      26: iconst_1
+      27: putfield      #38                 // Field removeNextTick:Z
+      30: return
+
+  protected void expireProjectile();
+    Code:
+       0: aload_0
+       1: getfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+       4: invokevirtual #42                 // Method net/minecraft/world/item/ItemStack.getItem:()Lnet/minecraft/world/item/Item;
+       7: astore_2
+       8: aload_2
+       9: instanceof    #46                 // class rbasamoyai/createbigcannons/munitions/fuzes/FuzeItem
+      12: ifeq          40
+      15: aload_2
+      16: checkcast     #46                 // class rbasamoyai/createbigcannons/munitions/fuzes/FuzeItem
+      19: astore_1
+      20: aload_1
+      21: aload_0
+      22: getfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+      25: aload_0
+      26: invokevirtual #48                 // Method rbasamoyai/createbigcannons/munitions/fuzes/FuzeItem.onProjectileExpiry:(Lnet/minecraft/world/item/ItemStack;Lrbasamoyai/createbigcannons/munitions/AbstractCannonProjectile;)Z
+      29: ifeq          40
+      32: aload_0
+      33: aload_0
+      34: invokevirtual #30                 // Method position:()Lnet/minecraft/world/phys/Vec3;
+      37: invokevirtual #34                 // Method detonate:(Lnet/minecraft/core/Position;)V
+      40: aload_0
+      41: invokespecial #52                 // Method rbasamoyai/createbigcannons/munitions/autocannon/AbstractAutocannonProjectile.expireProjectile:()V
+      44: return
+
+  protected boolean onImpact(net.minecraft.world.phys.HitResult, rbasamoyai.createbigcannons.munitions.AbstractCannonProjectile$ImpactResult, rbasamoyai.createbigcannons.munitions.ProjectileContext);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: aload_3
+       4: invokespecial #55                 // Method rbasamoyai/createbigcannons/munitions/autocannon/AbstractAutocannonProjectile.onImpact:(Lnet/minecraft/world/phys/HitResult;Lrbasamoyai/createbigcannons/munitions/AbstractCannonProjectile$ImpactResult;Lrbasamoyai/createbigcannons/munitions/ProjectileContext;)Z
+       7: pop
+       8: aload_0
+       9: aload_0
+      10: aload_1
+      11: aload_2
+      12: invokedynamic #59,  0             // InvokeDynamic #1:test:(Lrbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectile;Lnet/minecraft/world/phys/HitResult;Lrbasamoyai/createbigcannons/munitions/AbstractCannonProjectile$ImpactResult;)Ljava/util/function/Predicate;
+      17: invokevirtual #26                 // Method canDetonate:(Ljava/util/function/Predicate;)Z
+      20: ifeq          33
+      23: aload_0
+      24: aload_1
+      25: invokevirtual #62                 // Method net/minecraft/world/phys/HitResult.getLocation:()Lnet/minecraft/world/phys/Vec3;
+      28: invokevirtual #34                 // Method detonate:(Lnet/minecraft/core/Position;)V
+      31: iconst_1
+      32: ireturn
+      33: iconst_0
+      34: ireturn
+
+  protected boolean onClip(rbasamoyai.createbigcannons.munitions.ProjectileContext, net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: aload_3
+       4: invokespecial #67                 // Method rbasamoyai/createbigcannons/munitions/autocannon/AbstractAutocannonProjectile.onClip:(Lrbasamoyai/createbigcannons/munitions/ProjectileContext;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)Z
+       7: ifeq          12
+      10: iconst_1
+      11: ireturn
+      12: aload_0
+      13: aload_0
+      14: aload_2
+      15: aload_3
+      16: aload_1
+      17: invokedynamic #71,  0             // InvokeDynamic #2:test:(Lrbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectile;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Lrbasamoyai/createbigcannons/munitions/ProjectileContext;)Ljava/util/function/Predicate;
+      22: invokevirtual #26                 // Method canDetonate:(Ljava/util/function/Predicate;)Z
+      25: ifeq          38
+      28: aload_0
+      29: aload_1
+      30: invokevirtual #74                 // Method rbasamoyai/createbigcannons/munitions/ProjectileContext.getDetonationPositionForClip:()Lnet/minecraft/world/phys/Vec3;
+      33: invokevirtual #34                 // Method detonate:(Lnet/minecraft/core/Position;)V
+      36: iconst_1
+      37: ireturn
+      38: iconst_0
+      39: ireturn
+
+  protected void detonate(net.minecraft.core.Position);
+    Code:
+       0: aload_0
+       1: invokevirtual #79                 // Method getDeltaMovement:()Lnet/minecraft/world/phys/Vec3;
+       4: astore_2
+       5: aload_0
+       6: invokevirtual #82                 // Method getAllProperties:()Lrbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties;
+       9: astore_3
+      10: new           #86                 // class rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakExplosion
+      13: dup
+      14: aload_0
+      15: invokevirtual #88                 // Method level:()Lnet/minecraft/world/level/Level;
+      18: aconst_null
+      19: aload_0
+      20: iconst_0
+      21: invokevirtual #92                 // Method indirectArtilleryFire:(Z)Lnet/minecraft/world/damagesource/DamageSource;
+      24: aload_1
+      25: invokeinterface #96,  1           // InterfaceMethod net/minecraft/core/Position.x:()D
+      30: aload_1
+      31: invokeinterface #102,  1          // InterfaceMethod net/minecraft/core/Position.y:()D
+      36: aload_1
+      37: invokeinterface #105,  1          // InterfaceMethod net/minecraft/core/Position.z:()D
+      42: aload_3
+      43: invokevirtual #108                // Method rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties.explosion:()Lrbasamoyai/createbigcannons/munitions/config/components/ExplosionPropertiesComponent;
+      46: invokevirtual #114                // Method rbasamoyai/createbigcannons/munitions/config/components/ExplosionPropertiesComponent.blockDamagePower:()F
+      49: aload_3
+      50: invokevirtual #108                // Method rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties.explosion:()Lrbasamoyai/createbigcannons/munitions/config/components/ExplosionPropertiesComponent;
+      53: invokevirtual #120                // Method rbasamoyai/createbigcannons/munitions/config/components/ExplosionPropertiesComponent.entityDamagePower:()F
+      56: invokestatic  #123                // Method rbasamoyai/createbigcannons/config/CBCConfigs.server:()Lrbasamoyai/createbigcannons/config/CBCCfgServer;
+      59: getfield      #129                // Field rbasamoyai/createbigcannons/config/CBCCfgServer.munitions:Lrbasamoyai/createbigcannons/config/CBCCfgMunitions;
+      62: getfield      #135                // Field rbasamoyai/createbigcannons/config/CBCCfgMunitions.damageRestriction:Lnet/createmod/catnip/config/ConfigBase$ConfigEnum;
+      65: invokevirtual #141                // Method net/createmod/catnip/config/ConfigBase$ConfigEnum.get:()Ljava/lang/Object;
+      68: checkcast     #147                // class rbasamoyai/createbigcannons/config/CBCCfgMunitions$GriefState
+      71: invokevirtual #149                // Method rbasamoyai/createbigcannons/config/CBCCfgMunitions$GriefState.explosiveInteraction:()Lnet/minecraft/world/level/Explosion$BlockInteraction;
+      74: invokespecial #153                // Method rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakExplosion."<init>":(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/damagesource/DamageSource;DDDFFLnet/minecraft/world/level/Explosion$BlockInteraction;)V
+      77: astore        4
+      79: aload_0
+      80: invokevirtual #88                 // Method level:()Lnet/minecraft/world/level/Level;
+      83: aload         4
+      85: invokestatic  #156                // Method rbasamoyai/createbigcannons/CreateBigCannons.handleCustomExplosion:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/Explosion;)V
+      88: aload_0
+      89: invokevirtual #88                 // Method level:()Lnet/minecraft/world/level/Level;
+      92: getstatic     #162                // Field rbasamoyai/createbigcannons/index/CBCEntityTypes.FLAK_BURST:Lcom/tterrag/registrate/util/entry/EntityEntry;
+      95: invokevirtual #168                // Method com/tterrag/registrate/util/entry/EntityEntry.get:()Ljava/lang/Object;
+      98: checkcast     #171                // class net/minecraft/world/entity/EntityType
+     101: new           #173                // class net/minecraft/world/phys/Vec3
+     104: dup
+     105: aload_1
+     106: invokeinterface #96,  1           // InterfaceMethod net/minecraft/core/Position.x:()D
+     111: aload_1
+     112: invokeinterface #102,  1          // InterfaceMethod net/minecraft/core/Position.y:()D
+     117: aload_1
+     118: invokeinterface #105,  1          // InterfaceMethod net/minecraft/core/Position.z:()D
+     123: invokespecial #175                // Method net/minecraft/world/phys/Vec3."<init>":(DDD)V
+     126: aload_2
+     127: aload_3
+     128: invokevirtual #178                // Method rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties.flakBurst:()Lrbasamoyai/createbigcannons/munitions/fragment_burst/ProjectileBurstParentPropertiesComponent;
+     131: invokevirtual #182                // Method rbasamoyai/createbigcannons/munitions/fragment_burst/ProjectileBurstParentPropertiesComponent.burstProjectileCount:()I
+     134: aload_3
+     135: invokevirtual #178                // Method rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties.flakBurst:()Lrbasamoyai/createbigcannons/munitions/fragment_burst/ProjectileBurstParentPropertiesComponent;
+     138: invokevirtual #188                // Method rbasamoyai/createbigcannons/munitions/fragment_burst/ProjectileBurstParentPropertiesComponent.burstSpread:()D
+     141: invokestatic  #191                // Method rbasamoyai/createbigcannons/munitions/fragment_burst/CBCProjectileBurst.spawnConeBurst:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;ID)Lrbasamoyai/ritchiesprojectilelib/projectile_burst/ProjectileBurst;
+     144: pop
+     145: return
+
+  public void setFuze(net.minecraft.world.item.ItemStack);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+       5: return
+
+  public void addAdditionalSaveData(net.minecraft.nbt.CompoundTag);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #197                // Method rbasamoyai/createbigcannons/munitions/autocannon/AbstractAutocannonProjectile.addAdditionalSaveData:(Lnet/minecraft/nbt/CompoundTag;)V
+       5: aload_0
+       6: getfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+       9: ifnull        33
+      12: aload_1
+      13: ldc           #201                // String Fuze
+      15: aload_0
+      16: getfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+      19: aload_0
+      20: invokevirtual #88                 // Method level:()Lnet/minecraft/world/level/Level;
+      23: invokevirtual #203                // Method net/minecraft/world/level/Level.registryAccess:()Lnet/minecraft/core/RegistryAccess;
+      26: invokevirtual #209                // Method net/minecraft/world/item/ItemStack.saveOptional:(Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/nbt/Tag;
+      29: invokevirtual #213                // Method net/minecraft/nbt/CompoundTag.put:(Ljava/lang/String;Lnet/minecraft/nbt/Tag;)Lnet/minecraft/nbt/Tag;
+      32: pop
+      33: return
+
+  public void readAdditionalSaveData(net.minecraft.nbt.CompoundTag);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #219                // Method rbasamoyai/createbigcannons/munitions/autocannon/AbstractAutocannonProjectile.readAdditionalSaveData:(Lnet/minecraft/nbt/CompoundTag;)V
+       5: aload_0
+       6: aload_0
+       7: invokevirtual #88                 // Method level:()Lnet/minecraft/world/level/Level;
+      10: invokevirtual #203                // Method net/minecraft/world/level/Level.registryAccess:()Lnet/minecraft/core/RegistryAccess;
+      13: aload_1
+      14: ldc           #201                // String Fuze
+      16: invokevirtual #222                // Method net/minecraft/nbt/CompoundTag.getCompound:(Ljava/lang/String;)Lnet/minecraft/nbt/CompoundTag;
+      19: invokestatic  #226                // Method net/minecraft/world/item/ItemStack.parseOptional:(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/item/ItemStack;
+      22: putfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+      25: return
+
+  protected final boolean canDetonate(java.util.function.Predicate<rbasamoyai.createbigcannons.munitions.fuzes.FuzeItem>);
+    Code:
+       0: aload_0
+       1: invokevirtual #88                 // Method level:()Lnet/minecraft/world/level/Level;
+       4: getfield      #230                // Field net/minecraft/world/level/Level.isClientSide:Z
+       7: ifne          65
+      10: aload_0
+      11: invokevirtual #88                 // Method level:()Lnet/minecraft/world/level/Level;
+      14: aload_0
+      15: invokevirtual #233                // Method blockPosition:()Lnet/minecraft/core/BlockPos;
+      18: invokevirtual #237                // Method net/minecraft/world/level/Level.hasChunkAt:(Lnet/minecraft/core/BlockPos;)Z
+      21: ifeq          65
+      24: aload_0
+      25: invokevirtual #241                // Method isRemoved:()Z
+      28: ifne          65
+      31: aload_0
+      32: getfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+      35: invokevirtual #42                 // Method net/minecraft/world/item/ItemStack.getItem:()Lnet/minecraft/world/item/Item;
+      38: astore_3
+      39: aload_3
+      40: instanceof    #46                 // class rbasamoyai/createbigcannons/munitions/fuzes/FuzeItem
+      43: ifeq          65
+      46: aload_3
+      47: checkcast     #46                 // class rbasamoyai/createbigcannons/munitions/fuzes/FuzeItem
+      50: astore_2
+      51: aload_1
+      52: aload_2
+      53: invokeinterface #245,  2          // InterfaceMethod java/util/function/Predicate.test:(Ljava/lang/Object;)Z
+      58: ifeq          65
+      61: iconst_1
+      62: goto          66
+      65: iconst_0
+      66: ireturn
+
+  public rbasamoyai.createbigcannons.munitions.config.components.EntityDamagePropertiesComponent getDamageProperties();
+    Code:
+       0: aload_0
+       1: invokevirtual #82                 // Method getAllProperties:()Lrbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties;
+       4: invokevirtual #250                // Method rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties.damage:()Lrbasamoyai/createbigcannons/munitions/config/components/EntityDamagePropertiesComponent;
+       7: areturn
+
+  protected rbasamoyai.createbigcannons.munitions.config.components.BallisticPropertiesComponent getBallisticProperties();
+    Code:
+       0: aload_0
+       1: invokevirtual #82                 // Method getAllProperties:()Lrbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties;
+       4: invokevirtual #254                // Method rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties.ballistics:()Lrbasamoyai/createbigcannons/munitions/config/components/BallisticPropertiesComponent;
+       7: areturn
+
+  protected rbasamoyai.createbigcannons.munitions.autocannon.flak.FlakAutocannonProjectileProperties getAllProperties();
+    Code:
+       0: getstatic     #258                // Field rbasamoyai/createbigcannons/index/CBCMunitionPropertiesHandlers.FLAK_AUTOCANNON:Lrbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectilePropertiesHandler;
+       3: aload_0
+       4: invokevirtual #264                // Method rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectilePropertiesHandler.getPropertiesOf:(Lnet/minecraft/world/entity/Entity;)Ljava/lang/Object;
+       7: checkcast     #109                // class rbasamoyai/createbigcannons/munitions/autocannon/flak/FlakAutocannonProjectileProperties
+      10: areturn
+
+  private boolean lambda$onClip$2(net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3, rbasamoyai.createbigcannons.munitions.ProjectileContext, rbasamoyai.createbigcannons.munitions.fuzes.FuzeItem);
+    Code:
+       0: aload         4
+       2: aload_0
+       3: getfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+       6: aload_0
+       7: aload_1
+       8: aload_2
+       9: aload_3
+      10: iconst_0
+      11: invokevirtual #270                // Method rbasamoyai/createbigcannons/munitions/fuzes/FuzeItem.onProjectileClip:(Lnet/minecraft/world/item/ItemStack;Lrbasamoyai/createbigcannons/munitions/AbstractCannonProjectile;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Lrbasamoyai/createbigcannons/munitions/ProjectileContext;Z)Z
+      14: ireturn
+
+  private boolean lambda$onImpact$1(net.minecraft.world.phys.HitResult, rbasamoyai.createbigcannons.munitions.AbstractCannonProjectile$ImpactResult, rbasamoyai.createbigcannons.munitions.fuzes.FuzeItem);
+    Code:
+       0: aload_3
+       1: aload_0
+       2: getfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+       5: aload_0
+       6: aload_1
+       7: aload_2
+       8: iconst_0
+       9: invokevirtual #274                // Method rbasamoyai/createbigcannons/munitions/fuzes/FuzeItem.onProjectileImpact:(Lnet/minecraft/world/item/ItemStack;Lrbasamoyai/createbigcannons/munitions/AbstractCannonProjectile;Lnet/minecraft/world/phys/HitResult;Lrbasamoyai/createbigcannons/munitions/AbstractCannonProjectile$ImpactResult;Z)Z
+      12: ireturn
+
+  private boolean lambda$tick$0(rbasamoyai.createbigcannons.munitions.fuzes.FuzeItem);
+    Code:
+       0: aload_1
+       1: aload_0
+       2: getfield      #13                 // Field fuze:Lnet/minecraft/world/item/ItemStack;
+       5: aload_0
+       6: invokevirtual #278                // Method rbasamoyai/createbigcannons/munitions/fuzes/FuzeItem.onProjectileTick:(Lnet/minecraft/world/item/ItemStack;Lrbasamoyai/createbigcannons/munitions/AbstractCannonProjectile;)Z
+       9: ireturn
+}

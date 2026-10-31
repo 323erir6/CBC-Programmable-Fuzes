@@ -1,0 +1,13 @@
+{
+  "item.cbc_programmable_fuzes.programmable_fuze": "Програмований підривник",
+  "item.cbc_programmable_fuzes.programmable_fuze.proximity": "Дистанційний режим: %s, радіус %s м",
+  "item.cbc_programmable_fuzes.programmable_fuze.timer": "Таймер: %s, %s с",
+  "item.cbc_programmable_fuzes.programmable_fuze.persistent": "Заборона деспавну снаряда: %s",
+  "item.cbc_programmable_fuzes.programmable_fuze.computer": "Налаштовується через сусідній комп'ютер CC:Tweaked",
+  "item.cbc_programmable_fuzes.trajectory_correction_module": "Модуль активної корекції траєкторії",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.channel": "Канал: %s",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.target": "Ціль: %s, %s, %s",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.no_target": "Координати цілі не задані",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.install": "Встановлення і зняття із задньої сторони снаряда",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.persistent": "Заборона деспавну снаряда: %s"
+}

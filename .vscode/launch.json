@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Server",
+      "presentation": {
+        "group": "Mod Development - CBCProgrammableFuzes",
+        "order": 0
+      },
+      "projectName": "CBCProgrammableFuzes",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@C:\\Users\\ivan\\Desktop\\ProgFile\\CBCProgrammableFuzes\\build\\moddev\\serverRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@C:\\Users\\ivan\\Desktop\\ProgFile\\CBCProgrammableFuzes\\build\\moddev\\serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dcbc_programmable_fuzes%%C:\\Users\\ivan\\Desktop\\ProgFile\\CBCProgrammableFuzes\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run-server",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    }
+  ]
+}

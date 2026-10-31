@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    " E ",
+    "BFB",
+    " W "
+  ],
+  "key": {
+    "E": {
+      "item": "create:electron_tube"
+    },
+    "B": {
+      "item": "create:brass_sheet"
+    },
+    "F": {
+      "item": "createbigcannons:proximity_fuze"
+    },
+    "W": {
+      "item": "computercraft:wired_modem"
+    }
+  },
+  "result": {
+    "id": "cbc_programmable_fuzes:programmable_fuze",
+    "count": 1
+  },
+  "show_notification": true
+}

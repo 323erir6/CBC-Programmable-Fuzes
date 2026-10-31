@@ -1,0 +1,13 @@
+{
+  "item.cbc_programmable_fuzes.programmable_fuze": "Программируемый взрыватель",
+  "item.cbc_programmable_fuzes.programmable_fuze.proximity": "Дистанционный режим: %s, радиус %s м",
+  "item.cbc_programmable_fuzes.programmable_fuze.timer": "Таймер: %s, %s с",
+  "item.cbc_programmable_fuzes.programmable_fuze.persistent": "Запрет деспавна снаряда: %s",
+  "item.cbc_programmable_fuzes.programmable_fuze.computer": "Настраивается через соседний компьютер CC:Tweaked",
+  "item.cbc_programmable_fuzes.trajectory_correction_module": "Модуль активной коррекции траектории",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.channel": "Канал: %s",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.target": "Цель: %s, %s, %s",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.no_target": "Координаты цели не заданы",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.install": "Установка и снятие с задней стороны снаряда",
+  "item.cbc_programmable_fuzes.trajectory_correction_module.persistent": "Запрет деспавна снаряда: %s"
+}

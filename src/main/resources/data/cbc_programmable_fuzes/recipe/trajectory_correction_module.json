@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "IPI",
+    "CMC",
+    "I I"
+  ],
+  "key": {
+    "I": {
+      "item": "create:iron_sheet"
+    },
+    "P": {
+      "item": "create:precision_mechanism"
+    },
+    "C": {
+      "item": "create:copper_sheet"
+    },
+    "M": {
+      "item": "computercraft:wireless_modem_advanced"
+    }
+  },
+  "result": {
+    "id": "cbc_programmable_fuzes:trajectory_correction_module",
+    "count": 1
+  },
+  "show_notification": true
+}
